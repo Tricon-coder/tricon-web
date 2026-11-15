@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TriCon Transfers | Puerto Iguazú</title>
+<meta name="description" content="Traslados turísticos en Puerto Iguazú: aeropuerto, hoteles, Cataratas Argentinas y Brasileñas, Paraguay y servicios privados.">
+<meta name="theme-color" content="#0a0a09">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23123524'/><text x='50' y='68' font-size='54' text-anchor='middle' fill='%23b89b5e' font-family='serif'>T</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="dns-prefetch" href="https://images.pexels.com">
+<link rel="preconnect" href="https://images.unsplash.com">
+<style>
+:root{
+  --black:#0a0a09; --green:#123524; --green2:#1b4d36; --ivory:#f6f4ee; --gold:#b89b5e;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:68px}
+body{font-family:var(--sans);font-weight:300;background:var(--black);color:var(--ivory);line-height:1.65;font-size:17px;-webkit-text-size-adjust:100%;padding-bottom:env(safe-area-inset-bottom)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top);background:rgba(10,10,9,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(184,155,94,.25)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:var(--serif);font-size:1.45rem;font-weight:600;text-decoration:none;letter-spacing:.02em}
+.logo b{color:var(--gold);font-weight:600}
+.tools{display:flex;align-items:center;gap:14px}
+.lang{display:flex;border:1px solid var(--gold);border-radius:99px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--ivory);font:500 .8rem var(--sans);padding:7px 12px;cursor:pointer;transition:.3s}
+.lang button.on{background:var(--gold);color:var(--black)}
+.burger{background:none;border:0;width:40px;height:40px;cursor:pointer;display:grid;place-content:center;gap:6px}
+.burger span{display:block;width:24px;height:1.5px;background:var(--ivory);transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+nav{position:fixed;top:calc(61px + env(safe-area-inset-top));left:0;right:0;background:var(--black);padding:8px 24px 24px;display:flex;flex-direction:column;transform:translateY(-12px);opacity:0;visibility:hidden;transition:.35s;border-bottom:1px solid rgba(184,155,94,.25)}
+nav.open{transform:none;opacity:1;visibility:visible}
+nav a{text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(246,244,238,.08);font-size:1.05rem}
+nav a:last-child{border:0}
+@media(min-width:900px){
+  .burger{display:none}
+  nav{position:static;flex-direction:row;gap:22px;padding:0;opacity:1;visibility:visible;transform:none;background:none;border:0}
+  nav a{padding:0;border:0;font-size:.82rem;opacity:.85}
+  nav a:hover{color:var(--gold);opacity:1}
+  .bar{gap:24px}.tools{order:3}
+}
+
+/* Hero */
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero{position:relative;isolation:isolate;overflow:hidden;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;padding:110px 0 64px;background:linear-gradient(160deg,var(--green2),var(--black))}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,10,9,.6) 0%,rgba(10,10,9,.4) 28%,rgba(10,10,9,.72) 70%,var(--black) 100%)}
+.hero h1,.hero p{text-shadow:0 2px 24px rgba(0,0,0,.55)}
+.hero h1{font-size:clamp(2.9rem,12vw,6rem);max-width:12ch;margin-bottom:20px}
+.hero p{max-width:34ch;font-size:1.1rem;opacity:.9;margin-bottom:32px}
+.rule{width:56px;height:1px;background:var(--gold);margin-bottom:24px}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 28px;border-radius:99px;font:500 .95rem var(--sans);text-decoration:none;cursor:pointer;border:1px solid var(--gold);transition:.3s}
+.btn.gold{background:var(--gold);color:var(--black)}
+.btn.gold:hover{background:var(--ivory);border-color:var(--ivory)}
+.btn.line{background:none;color:var(--ivory)}
+.btn.line:hover{background:var(--gold);color:var(--black)}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+
+/* Secciones */
+section{padding:84px 0}
+section h2{font-size:clamp(2.2rem,8vw,3.6rem);margin-bottom:18px}
+section .lead{max-width:52ch;opacity:.85;margin-bottom:28px}
+.light{background:var(--ivory);color:var(--black)}
+.light .lead{opacity:.75}
+.green{background:var(--green)}
+.photo{position:relative;isolation:isolate;overflow:hidden;min-height:70vh;display:flex;align-items:center}
+.photo .wrap{width:100%}
+.photo h2,.photo .lead{text-shadow:0 2px 20px rgba(0,0,0,.55)}
+.photo::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,10,9,.78),rgba(10,10,9,.4) 50%,rgba(10,10,9,.85))}
+#arg{background:linear-gradient(160deg,var(--green2),var(--black));}
+#bra{background:linear-gradient(160deg,#0e2a1c,#050504)}
+#par{background:linear-gradient(160deg,#1a3a2a,#0a0a09)}
+.banner{margin:0 0 28px;border-radius:6px;overflow:hidden;aspect-ratio:16/9;max-height:340px;background:linear-gradient(160deg,var(--green),var(--black))}
+.banner img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Tarjetas de servicio */
+.grid{display:grid;gap:16px;margin-bottom:28px}
+@media(min-width:760px){.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}}
+.card{border:1px solid rgba(184,155,94,.4);border-radius:6px;padding:26px 24px;display:flex;flex-direction:column;gap:12px;transition:.35s}
+.card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.light .card{border-color:rgba(18,53,36,.25)}
+.card h3{font-size:1.6rem}
+.card p{opacity:.82;font-size:.97rem}
+.price{font-size:.9rem;color:var(--gold);min-height:1.4em}
+.light .price{color:var(--green)}
+.card .btn{margin-top:auto;align-self:flex-start;padding:11px 22px;font-size:.88rem}
+.light .btn.line{color:var(--black);border-color:var(--green)}
+.light .btn.line:hover{background:var(--green);color:var(--ivory)}
+.inline-price{margin:0 0 20px}
+
+/* Contacto */
+form{display:grid;gap:14px;max-width:520px}
+label{font-size:.9rem;opacity:.85;display:grid;gap:6px}
+input,select,textarea{font:300 1rem var(--sans);color:var(--ivory);background:rgba(246,244,238,.06);border:1px solid rgba(184,155,94,.4);border-radius:6px;padding:13px 14px;width:100%}
+select option{color:#111}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+textarea{min-height:96px;resize:vertical}
+.two-f{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:480px){.two-f{grid-template-columns:1fr 1fr}}
+form label,input,select,textarea{min-width:0;max-width:100%}
+input,select,textarea{color-scheme:dark;-webkit-appearance:none;appearance:none}
+input[type=date],input[type=number]{min-height:50px;text-align:left}
+input[type=date]::-webkit-date-and-time-value{text-align:left;min-height:1.2em}
+.credits{margin-top:6px;font-size:.78rem}
+footer{padding:36px 0 110px;text-align:center;font-size:.85rem;opacity:.7;border-top:1px solid rgba(184,155,94,.25)}
+
+/* WhatsApp flotante */
+.wa{position:fixed;right:14px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:60;width:52px;height:52px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 6px 22px rgba(0,0,0,.45);transition:opacity .35s,transform .35s}
+.wa.hide{opacity:0;transform:translateY(16px);pointer-events:none}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:27px;height:27px;fill:#fff}
+
+/* Aparición suave */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#inicio">Tri<b>Con</b> Transfers</a>
+    <div class="tools">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button data-lang="es" class="on">ES</button><button data-lang="en">EN</button>
+      </div>
+      <button class="burger" aria-label="Menú" data-aria="a_menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <nav id="menu">
+      <a href="#aeropuerto" data-i="n_aero"></a>
+      <a href="#hoteles" data-i="n_hot"></a>
+      <a href="#arg" data-i="n_arg"></a>
+      <a href="#bra" data-i="n_bra"></a>
+      <a href="#par" data-i="n_par"></a>
+      <a href="#privados" data-i="n_priv"></a>
+      <a href="#contacto" data-i="n_con"></a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="inicio" class="hero" style="padding-bottom:64px">
+  <img class="bg" data-photo="hero" sizes="100vw" alt="" width="1600" height="900" fetchpriority="high" decoding="async" onerror="this.remove()">
+  <div class="wrap">
+    <div class="rule"></div>
+    <h1 data-i="h_title"></h1>
+    <p data-i="h_sub"></p>
+    <div class="row">
+      <a class="btn gold" href="#contacto" data-i="h_cta1"></a>
+      <a class="btn line" data-wa="general" data-i="h_cta2"></a>
+    </div>
+  </div>
+</section>
+
+<section id="aeropuerto" class="light">
+  <div class="wrap rv">
+    <h2 data-i="aero_t"></h2>
+    <p class="lead" data-i="aero_p"></p>
+    <figure class="banner"><img data-photo="aero" sizes="(min-width:1040px) 992px, calc(100vw - 48px)" alt="" width="1600" height="900" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure>
+    <div class="grid two">
+      <div class="card"><h3 data-i="aero_c1"></h3><p data-i="aero_c1p"></p><div class="price" data-price="aero_in"></div><a class="btn line" data-wa="aero_in" data-i="tarifa"></a></div>
+      <div class="card"><h3 data-i="aero_c2"></h3><p data-i="aero_c2p"></p><div class="price" data-price="aero_out"></div><a class="btn line" data-wa="aero_out" data-i="tarifa"></a></div>
+    </div>
+  </div>
+</section>
+
+<section id="hoteles">
+  <div class="wrap rv">
+    <h2 data-i="hot_t"></h2>
+    <p class="lead" data-i="hot_p"></p>
+    <figure class="banner"><img data-photo="hot" sizes="(min-width:1040px) 992px, calc(100vw - 48px)" alt="" width="1600" height="900" loading="lazy" decoding="async" onerror="this.parentNode.remove()"></figure>
+    <div class="grid two">
+      <div class="card"><h3 data-i="hot_c1"></h3><p data-i="hot_c1p"></p><div class="price" data-price="hotel_dest"></div><a class="btn line" data-wa="hotel_dest" data-i="tarifa"></a></div>
+      <div class="card"><h3 data-i="hot_c2"></h3><p data-i="hot_c2p"></p><div class="price" data-price="hotel_hotel"></div><a class="btn line" data-wa="hotel_hotel" data-i="tarifa"></a></div>
+    </div>
+  </div>
+</section>
+
+<section id="arg" class="photo">
+  <img class="bg" data-photo="arg" sizes="100vw" alt="" width="1600" height="900" loading="lazy" decoding="async" onerror="this.remove()">
+  <div class="wrap rv">
+    <h2 data-i="arg_t"></h2>
+    <p class="lead" data-i="arg_p"></p>
+    <div class="price inline-price" data-price="arg"></div>
+    <a class="btn gold" data-wa="arg" data-i="tarifa"></a>
+  </div>
+</section>
+
+<section id="bra" class="photo">
+  <img class="bg" data-photo="bra" sizes="100vw" alt="" width="1600" height="900" loading="lazy" decoding="async" onerror="this.remove()">
+  <div class="wrap rv">
+    <h2 data-i="bra_t"></h2>
+    <p class="lead" data-i="bra_p"></p>
+    <div class="price inline-price" data-price="bra"></div>
+    <a class="btn gold" data-wa="bra" data-i="tarifa"></a>
+  </div>
+</section>
+
+<section id="par" class="photo">
+  <img class="bg" data-photo="par" sizes="100vw" alt="" width="1600" height="900" loading="lazy" decoding="async" onerror="this.remove()">
+  <div class="wrap rv">
+    <h2 data-i="par_t"></h2>
+    <p class="lead" data-i="par_p"></p>
+    <div class="price inline-price" data-price="par"></div>
+    <a class="btn gold" data-wa="par" data-i="tarifa"></a>
+  </div>
+</section>
+
+<section id="privados" class="green">
+  <div class="wrap rv">
+    <h2 data-i="priv_t"></h2>
+    <p class="lead" data-i="priv_p"></p>
+    <div class="price inline-price" data-price="priv"></div>
+    <a class="btn gold" data-wa="priv" data-i="priv_cta"></a>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap rv">
+    <h2 data-i="con_t"></h2>
+    <p class="lead" data-i="con_p"></p>
+    <form id="rf">
+      <label><span data-i="f_name"></span><input name="name" required autocomplete="name"></label>
+      <label><span data-i="f_serv"></span>
+        <select name="serv" id="serv"></select></label>
+      <div class="two-f">
+        <label><span data-i="f_date"></span><input type="date" name="date"></label>
+        <label><span data-i="f_pax"></span><input type="number" name="pax" min="1" inputmode="numeric"></label>
+      </div>
+      <label><span data-i="f_msg"></span><textarea name="msg" data-ph="f_msg_ph"></textarea></label>
+      <button class="btn gold" type="submit" data-i="f_send"></button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> TriCon Transfers · Puerto Iguazú, Misiones, Argentina<div class="credits" data-i="credits"></div></div></footer>
+
+<a class="wa" data-wa="general" aria-label="WhatsApp" data-aria="a_wa" target="_blank" rel="noopener">
+  <svg viewBox="0 0 32 32"><path d="M16.02 3C9.38 3 4 8.37 4 15c0 2.35.68 4.55 1.86 6.4L4 29l7.8-1.82A12 12 0 0 0 16.02 27C22.65 27 28 21.63 28 15S22.65 3 16.02 3zm0 21.9c-1.8 0-3.5-.5-4.95-1.36l-.36-.21-4.63 1.08 1.1-4.5-.24-.38A9.9 9.9 0 0 1 6.1 15c0-5.46 4.45-9.9 9.92-9.9 5.46 0 9.9 4.44 9.9 9.9 0 5.46-4.44 9.9-9.9 9.9zm5.43-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+</a>
+
+<script>
+/* ============ CONFIGURACIÓN (editá solo esta parte) ============ */
+const PHONE = "5493757568443";           // +54 9 3757 568443
+/* TARIFAS: completá cuando las tengas. Ejemplo: aero_in: "Desde USD 00" */
+const PRICES = {
+  aero_in:"", aero_out:"", hotel_dest:"", hotel_hotel:"",
+  arg:"", bra:"", par:"", priv:""
+};
+
+/* FOTOS (Pexels o Unsplash): Pexels admite el link de la página de la foto o solo su número; Unsplash, el enlace images.unsplash.com.
+   Si dejás "" esa sección se ve con el fondo verde oscuro, sin romper nada. */
+const PHOTOS = {
+  hero:"623174",    // portada: Cataratas del Iguazú, lado argentino (Tomas Anunziata)
+  arg:"29714295",   // Cataratas Argentinas (Csaba Marosi)
+  bra:"35813147",   // Cataratas Brasileñas (Kaka Souza)
+  aero:"39075475",  // Aeropuerto: minivan blanca frente a una terminal (mzynasx, Pexels)
+  hot:"31374505",   // Hoteles y destinos: minibús en camino rodeado de vegetación (Chris wade NTEZICIMPA, Pexels)
+  par:"https://images.unsplash.com/photo-1517057970663-5d535acb0b3a"  // Ciudad del Este, Paraguay (Rosa Rafael, Unsplash)
+};
+/* ================================================================ */
+
+const T = {
+ es:{
+  credits:"Fotografías: Pexels y Unsplash",
+  title:"TriCon Transfers | Traslados en Puerto Iguazú", desc:"Traslados turísticos en Puerto Iguazú: aeropuerto, hoteles, Cataratas Argentinas y Brasileñas, Paraguay y servicios privados.", a_menu:"Menú", a_wa:"Escribir por WhatsApp",
+  n_aero:"Aeropuerto", n_hot:"Hoteles y destinos", n_arg:"Cataratas Argentinas", n_bra:"Cataratas Brasileñas", n_par:"Paraguay", n_priv:"Servicios privados", n_con:"Contacto",
+  h_title:"Traslados en Puerto Iguazú", h_sub:"Llegá a las Cataratas y a cada destino con comodidad y puntualidad.", h_cta1:"Reservar", h_cta2:"Escribir por WhatsApp",
+  tarifa:"Consultar tarifa",
+  aero_t:"Traslados desde y hacia el aeropuerto", aero_p:"Te esperamos en el aeropuerto o te llevamos hasta él, para que tu viaje empiece y termine sin preocupaciones.",
+  aero_c1:"Aeropuerto a hotel", aero_c1p:"Traslado desde el aeropuerto hasta tu alojamiento.", aero_c2:"Hotel a aeropuerto", aero_c2p:"Traslado desde tu alojamiento hasta el aeropuerto.",
+  hot_t:"Traslados entre hoteles y destinos turísticos", hot_p:"Movete por Puerto Iguazú y la región sin depender de horarios ni de transporte público.",
+  hot_c1:"Hotel a destino turístico", hot_c1p:"Desde tu hotel a los principales atractivos de la zona.", hot_c2:"Entre hoteles", hot_c2p:"Cambio de alojamiento o traslados entre hoteles de la zona.",
+  arg_t:"Cataratas Argentinas", arg_p:"El Parque Nacional Iguazú del lado argentino, con sus pasarelas entre la selva y la Garganta del Diablo.",
+  bra_t:"Cataratas Brasileñas", bra_p:"El lado brasileño, desde Foz do Iguaçu, con las vistas panorámicas más amplias del conjunto de saltos.",
+  par_t:"Excursiones a Paraguay", par_p:"Excursiones a Ciudad del Este y alrededores, con traslado de ida y vuelta desde Puerto Iguazú.",
+  priv_t:"Servicios privados y personalizados", priv_p:"Armamos el recorrido según tus horarios, tu grupo y lo que quieras conocer. Contanos tu idea y la coordinamos juntos.", priv_cta:"Consultar por WhatsApp",
+  con_t:"Contacto y reservas", con_p:"Completá el formulario y se abrirá WhatsApp con tu consulta lista para enviar.",
+  f_name:"Nombre", f_serv:"Servicio", f_date:"Fecha", f_pax:"Pasajeros", f_msg:"Mensaje (vuelo, hotel, horarios)", f_msg_ph:"Opcional", f_send:"Enviar por WhatsApp",
+  svc:{aero_in:"Aeropuerto a hotel", aero_out:"Hotel a aeropuerto", hotel_dest:"Hotel a destino turístico", hotel_hotel:"Entre hoteles", arg:"Cataratas Argentinas", bra:"Cataratas Brasileñas", par:"Excursión a Paraguay", priv:"Servicio privado / personalizado", general:"Otra consulta"},
+  wa_g:"Hola TriCon Transfers, quisiera hacer una consulta.", wa_s:"Hola TriCon Transfers, quisiera consultar la tarifa de: ",
+  wa_r:["Hola TriCon Transfers, quiero reservar.","Nombre: ","Servicio: ","Fecha: ","Pasajeros: ","Mensaje: "]
+ },
+ en:{
+  credits:"Photos: Pexels and Unsplash",
+  title:"TriCon Transfers | Transfers in Puerto Iguazú", desc:"Tourist transfers in Puerto Iguazú: airport, hotels, Argentine and Brazilian Falls, Paraguay and private services.", a_menu:"Menu", a_wa:"Message us on WhatsApp",
+  n_aero:"Airport", n_hot:"Hotels & sights", n_arg:"Argentine Falls", n_bra:"Brazilian Falls", n_par:"Paraguay", n_priv:"Private services", n_con:"Contact",
+  h_title:"Transfers in Puerto Iguazú", h_sub:"Reach the Falls and every destination in comfort and on time.", h_cta1:"Book now", h_cta2:"Message us on WhatsApp",
+  tarifa:"Ask for a quote",
+  aero_t:"Airport transfers", aero_p:"We meet you at the airport or take you there, so your trip starts and ends without worry.",
+  aero_c1:"Airport to hotel", aero_c1p:"Transfer from the airport to your accommodation.", aero_c2:"Hotel to airport", aero_c2p:"Transfer from your accommodation to the airport.",
+  hot_t:"Hotel and sightseeing transfers", hot_p:"Get around Puerto Iguazú and the region without depending on schedules or public transport.",
+  hot_c1:"Hotel to attraction", hot_c1p:"From your hotel to the main attractions in the area.", hot_c2:"Hotel to hotel", hot_c2p:"Changing accommodation or moving between hotels in the area.",
+  arg_t:"Argentine Falls", arg_p:"Iguazú National Park on the Argentine side, with walkways through the jungle and the Devil's Throat.",
+  bra_t:"Brazilian Falls", bra_p:"The Brazilian side, from Foz do Iguaçu, with the widest panoramic views of the falls.",
+  par_t:"Paraguay excursions", par_p:"Excursions to Ciudad del Este and surroundings, with round-trip transfer from Puerto Iguazú.",
+  priv_t:"Private and tailor-made services", priv_p:"We build the route around your schedule, your group and what you want to see. Tell us your idea and we'll plan it together.", priv_cta:"Ask on WhatsApp",
+  con_t:"Contact and bookings", con_p:"Fill in the form and WhatsApp will open with your request ready to send.",
+  f_name:"Name", f_serv:"Service", f_date:"Date", f_pax:"Passengers", f_msg:"Message (flight, hotel, times)", f_msg_ph:"Optional", f_send:"Send via WhatsApp",
+  svc:{aero_in:"Airport to hotel", aero_out:"Hotel to airport", hotel_dest:"Hotel to attraction", hotel_hotel:"Hotel to hotel", arg:"Argentine Falls", bra:"Brazilian Falls", par:"Paraguay excursion", priv:"Private / tailor-made service", general:"Other inquiry"},
+  wa_g:"Hello TriCon Transfers, I'd like to make an inquiry.", wa_s:"Hello TriCon Transfers, I'd like a quote for: ",
+  wa_r:["Hello TriCon Transfers, I'd like to book.","Name: ","Service: ","Date: ","Passengers: ","Message: "]
+ }
+};
+const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
+let lang=(()=>{try{const s=localStorage.getItem("tc_lang");if(s)return s}catch(e){}return (navigator.language||"es").toLowerCase().startsWith("en")?"en":"es"})();
+
+const wa=t=>`https://wa.me/${PHONE}?text=${encodeURIComponent(t)}`;
+function waFor(key){const t=T[lang];return wa(key==="general"?t.wa_g:t.wa_s+t.svc[key])}
+
+function photoUrl(v,w){
+  v=(v||"").trim(); if(!v) return "";
+  const m=v.match(/^(\d+)$/)||v.match(/pexels\.com\/.*?(\d+)\/?(?:[?#].*)?$/);
+  if(m) return `https://images.pexels.com/photos/${m[1]}/pexels-photo-${m[1]}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+  try{
+    const u=new URL(v);
+    if(u.hostname==="images.pexels.com"){u.searchParams.set("auto","compress");u.searchParams.set("w",w)}
+    else if(u.hostname==="images.unsplash.com"){u.searchParams.set("auto","format");u.searchParams.set("q","70");u.searchParams.set("w",w)}
+    return u.toString();
+  }catch(e){return ""}
+}
+function loadPhotos(){
+  $$("[data-photo]").forEach(img=>{
+    const v=PHOTOS[img.dataset.photo];
+    if(!photoUrl(v,800)){(img.closest(".banner")||img).remove();return}
+    img.srcset=[480,800,1200,1800].map(w=>photoUrl(v,w)+" "+w+"w").join(", ");
+    img.src=photoUrl(v,1200);
+  });
+}
+function apply(){
+  const t=T[lang];
+  document.documentElement.lang=lang;
+  document.title=t.title;$("meta[name=description]").content=t.desc;
+  $$("[data-aria]").forEach(e=>e.setAttribute("aria-label",t[e.dataset.aria]));
+  $$("[data-i]").forEach(e=>e.textContent=t[e.dataset.i]);
+  $$("[data-ph]").forEach(e=>e.placeholder=t[e.dataset.ph]);
+  $$("[data-wa]").forEach(e=>{e.href=waFor(e.dataset.wa);e.target="_blank";e.rel="noopener"});
+  $$("[data-price]").forEach(e=>e.textContent=PRICES[e.dataset.price]||"");
+  const sel=$("#serv"),cur=sel.value;
+  sel.innerHTML=Object.entries(t.svc).map(([k,v])=>`<option value="${k}">${v}</option>`).join("");
+  if(cur)sel.value=cur;
+  $$(".lang button").forEach(b=>b.classList.toggle("on",b.dataset.lang===lang));
+  try{localStorage.setItem("tc_lang",lang)}catch(e){}
+}
+$$(".lang button").forEach(b=>b.onclick=()=>{lang=b.dataset.lang;apply()});
+
+/* Menú móvil */
+const burger=$(".burger"),menu=$("#menu");
+burger.onclick=()=>{const o=menu.classList.toggle("open");burger.classList.toggle("open",o);burger.setAttribute("aria-expanded",o)};
+$$("#menu a").forEach(a=>a.addEventListener("click",()=>{menu.classList.remove("open");burger.classList.remove("open")}));
+
+/* Formulario -> WhatsApp */
+$("#rf").addEventListener("submit",e=>{
+  e.preventDefault();
+  const f=e.target,t=T[lang],r=t.wa_r;
+  const msg=[r[0],r[1]+f.name.value,r[2]+t.svc[f.serv.value],f.date.value&&r[3]+f.date.value,f.pax.value&&r[4]+f.pax.value,f.msg.value&&r[5]+f.msg.value].filter(Boolean).join("\n");
+  window.open(wa(msg),"_blank","noopener");
+});
+
+/* Aparición suave */
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.12});
+$$(".rv").forEach(e=>io.observe(e));
+$("#yr").textContent=new Date().getFullYear();
+
+/* El botón flotante se oculta sobre la portada y el formulario, donde ya hay botones de WhatsApp */
+const waBtn=$(".wa"),seen=new Set();
+const wo=new IntersectionObserver(es=>{es.forEach(x=>x.isIntersecting?seen.add(x.target):seen.delete(x.target));waBtn.classList.toggle("hide",seen.size>0)},{threshold:.3});
+[$("#inicio"),$("#rf")].forEach(e=>wo.observe(e));
+loadPhotos();
+apply();
+</script>
+</body>
+</html>
